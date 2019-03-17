@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+<div class="panel-head">
+					<strong>列表</strong>
+				
+				<table class="table table-hover">
+					<tr>
+						
+						<th width="*">编号</th>
+						<th width="*">文件名</th>
+                        <th width="*">发布人</th>
+                        <th width="*">操作</th>
+						
+					</tr>
+					<tr th:each="r : ${studentfiles.rows}">
+						
+						<td th:text="${r.studentFileNo}"></td>
+						<td th:text="${r.studentFileName}"></td>
+						<td th:text="${r.student.studentName}"></td>
+						<td><a class="button border-blue button-little" th:onclick="${'loadMisStudentFileDownloadForm(''' + r.getId() + ''');'}">下载</a></td>
+					</tr>
+				</table>
+				<div class="panel-foot text-center">
+					<ul class="pagination">
+						<li><a th:onclick="${studentfiles.page > 1} ? 'loadMisStudentFileLastPage();':''">
+							<span th:class="${studentfiles.page == 1} ? 'text-gray':''">上一页</span>
+						</a></li>
+					</ul>
+					<div class="button-group radio">
+						<th:block th:each="i : ${#numbers.sequence(studentfiles.startPage, studentfiles.endPage)}">
+						<label th:class="${studentfiles.page == i} ? 'button bg-white':'button'">
+							<input name="page" th:value="${i}" th:checked="${i == studentfiles.page}" type="radio" onclick="loadMisStudentFileList(0);" th:text="${i}"/>
+						</label>
+						</th:block>
+					</div>
+					<ul class="pagination">
+						<li><a th:onclick="${studentfiles.page < studentfiles.pages} ? 'loadMisStudentFileNextPage();':''">
+							<span th:class="${studentfiles.page == studentfiles.pages} ? 'text-gray':''" >下一页</span>
+						</a></li>
+					</ul>
+				</div>

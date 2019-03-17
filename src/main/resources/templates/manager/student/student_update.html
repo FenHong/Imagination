@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="/css/pintuer.css">
+<link rel="stylesheet" href="/css/xiamen.css">
+<script src="/js/jquery.js"></script>
+<script src="/js/pintuer.js"></script>
+<script src="/js/respond.js"></script>
+<script src="/js/mis/student.js"></script>
+<script>
+	var basePath = '/';
+	$(document).ready(function() {
+		pintuer();
+	});
+</script>
+</head>
+<body>
+	<div class="layout xiamen-top">
+		<div class="container">
+			<h1 class="float-left">修改</h1>
+			<h1 class="float-right">学生管理</h1>
+		</div>
+	</div>
+
+	<!-- main -->
+	<div class="layout xiamen-page-main">
+		<div class="container">
+			<div class="courses">
+				<div class="line-big">
+					<div class="x6">
+						<form id="misStudentUpdateForm" method="post" class="form radius-big">
+							
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">只读</span> <label>ID</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input" name="id" readonly="readonly" th:value="${student.getId()}"/>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入姓名</span> <label>姓名</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input" name="studentName"
+										size="50" data-validate="required:必填" placeholder="姓名" th:value="${student.getStudentName()}"/>
+								</div>
+							</div>
+							
+							
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入您的专业</span><label>专业</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input"
+										name="major" size="50" data-validate="required:必填"
+										placeholder="专业"  th:value="${student.getMajor()}"/>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入您的学院</span><label>学院</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input"
+										name="college" size="50" data-validate="required:必填"
+										placeholder="学院"  th:value="${student.getCollege()}"/>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入班级</span><label>班级</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input"
+										name="clazz" size="50" data-validate="required:必填"
+										placeholder="手机号"  th:value="${student.getClazz()}"/>
+								</div>
+							</div>
+
+							<div class="form-button">
+								<button type="button" class="button bg-green" onclick="submitMisStudentUpdate();">提交</button>
+								<button class="button bg-yellow" onclick="window.close();">退出</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+</body>
+</html>

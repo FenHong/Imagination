@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+<div class="panel-head">
+					<strong>列表</strong>
+				</div>
+				
+				<table class="table table-hover">
+					<tr>
+						
+						<th width="*">课题号</th>
+						<th width="*">课题名</th>
+						<th width="*">课题类型</th>
+						<th width="*">选取人</th>
+						<th width="*">操作</th>
+						
+						
+					</tr>
+					<tr th:each="r : ${teacherselectsubjects.rows}">
+					
+						<td th:text="${r.subject.subjectNo}"></td>
+						<td th:text="${r.subject.subjectName}"></td>
+						<td th:text="${r.subject.subjectType}"></td>
+						<td th:text="${r.student.studentName}"></td>
+						<td ><a class="button border-blue button-little" th:onclick="${'loadMisStudentScoreCreateForm(''' + r.getId() + ''');'}">评分</a></td>
+						
+					</tr>
+				</table>
+				<div class="panel-foot text-center">
+					<ul class="pagination">
+						<li><a th:onclick="${teacherselectsubjects.page > 1} ? 'loadMisTeacherSelectSubjectLastPage();':''">
+							<span th:class="${teacherselectsubjects.page == 1} ? 'text-gray':''">上一页</span>
+						</a></li>
+					</ul>
+					<div class="button-group radio">
+						<th:block th:each="i : ${#numbers.sequence(teacherselectsubjects.startPage, teacherselectsubjects.endPage)}">
+						<label th:class="${teacherselectsubjects.page == i} ? 'button bg-white':'button'">
+							<input name="page" th:value="${i}" th:checked="${i == teacherselectsubjects.page}" type="radio" onclick="loadMisTeacherSelectSubjectList(0);" th:text="${i}"/>
+						</label>
+						</th:block>
+					</div>
+					<ul class="pagination">
+						<li><a th:onclick="${teacherselectsubjects.page < teacherselectsubjects.pages} ? 'loadMisTeacherSelectSubjectNextPage();':''">
+							<span th:class="${teacherselectsubjects.page == teacherselectsubjects.pages} ? 'text-gray':''" >下一页</span>
+						</a></li>
+					</ul>
+				</div>

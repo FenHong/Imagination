@@ -1,0 +1,37 @@
+<head th:include="manager/manager">
+<meta charset="UTF-8">
+</head>
+<body>
+<div class="admin">
+<div class="x6">
+	<form action="/toupdatemanagerinfo" method="post" class="form radius-big">
+       <table class="table table-hover">
+       <tr>
+       <td width="45">ID</td>
+       <td th:text="${manager.id}" width="*"></td>
+       </tr>
+        <tr>
+       <td>账号</td>
+       <td th:text="${manager.managerNo}" width="*"></td>
+       </tr>
+        <tr>
+       <td>姓名</td>
+       <td th:text="${manager.managerName}" width="*"></td>
+       </tr>
+        <tr>
+       <td>性别</td>
+       <td th:text="${manager.sex}" width="*"></td>
+       </tr>
+        <tr>
+       <td>年龄</td>
+       <td th:text="${manager.age}" width="*"></td>
+       </tr>
+       </table>
+
+   <div class="form-button">
+       <button type="submit" class="button bg-green" >修改用户信息</button>
+	</div>
+	</form>
+	</div>
+</div>							 
+</body>

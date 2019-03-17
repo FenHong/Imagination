@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit" />
+<title>管理员主页</title>
+<link rel="stylesheet" href="/css/pintuer.css" />
+<link rel="stylesheet" href="/css/admin.css" />
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.form.min.js"></script>
+<script src="/js/pintuer.js"></script>
+<script src="/js/respond.js"></script>
+<script src="/js/mis/managerfile.js"></script>
+<script>
+	var basePath = "/";
+	$(document).ready(function() {
+		pintuer();
+		// $(document).on('click', WoKit.hideDropMenu);
+	});
+</script>
+<link type="image/x-icon" href="http://www.pintuer.com/favicon.ico"
+	rel="shortcut icon" />
+<link href="http://www.pintuer.com/favicon.ico" rel="bookmark icon" />
+</head>
+<body>
+	<div class="lefter">
+		<div class="logo">
+			<span style="font-size:30px">毕业选题系统</span>
+		</div>
+	</div>
+	<div class="righter nav-navicon" id="admin-nav">
+		<div class="mainer">
+			<div class="admin-navbar">
+				<span class="float-right">
+					<a class="button button-little bg-yellow" href="/logout">注销登录</a>
+				</span>
+				<ul class="nav nav-inline admin-nav">
+					<!-- 用户信息管理 -->
+					<li>
+ 						<a href="manager" class="icon-gears"> 用户信息管理</a>
+						<ul>
+							<li class="active">
+								<a href="managerinfo"><span></span><span class="icon-child"> 个人信息管理</span></a>
+							</li>
+							<li>
+								<a href="manager_teacherinfo"><span></span><span class="icon-child"> 老师信息管理</span></a>
+							</li>
+							<li>
+								<a href="manager_studentinfo"><span></span><span class="icon-child"> 学生信息管理</span></a>
+							</li>
+						</ul>
+					</li>
+					<!-- 课题信息管理 -->
+					<li>
+ 						<a href="managersubjectinfo" class="icon-gears"> 课题信息管理</a>
+						<ul>
+							<li class="active">
+								<a href="subject_auditing"><span></span><span class="icon-institution"> 审核课题</span></a>
+							</li>
+							<li>
+								<a href="subjectselectinfo"><span></span><span class="icon-institution"> 选取情况</span></a>
+							</li>
+						</ul>
+					</li>
+					<!-- 通知公告管理 -->
+					<li>
+ 						<a href="managerannouncement" class="icon-gears">通知与公告</a>
+						<ul>
+							<li class="active">
+								<a href="toaddannouncement"><span></span><span class="icon-pencil"> 发布通知公告</span></a>
+							</li>
+							<li>
+								<a href="announcement_list"><span></span><span class="icon-pencil"> 查看所有公告</span></a>
+							</li>
+						</ul>
+					</li>
+					<!-- 文件与资料管理 -->
+					<li class="active">
+ 						<a href="managerfile" class="icon-gears"> 文件与资料</a>
+						<ul>
+							<li class="active">
+								<a href="touploadmanagerfile"><span></span><span class="icon-file-o"> 上传资料</span></a>
+								<a href="tofindmanagerfile"><span></span><span class="icon-file-o"> 查看历史</span></a>
+							</li>
+						</ul>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="admin-bread">
+				<span th:text="${session.woUser.account + '，您好，欢迎您的光临!'}"></span>
+				<ul class="bread">
+					<li><a href="managerfile" class="icon-gears"> 文件与资料</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

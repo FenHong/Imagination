@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head th:include="student/folder/studentfile">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/mis/managerfile.js"></script>
+<script>
+	var basePath = "/";
+	$(document).ready(function() {
+		pintuer();
+		// $(document).on('click', WoKit.hideDropMenu);
+	});
+</script>
+</head>
+<body>
+<div class="admin">
+
+	<div th:fragment="list()">
+		<form method="post" id="misManagerFileListPageForm">
+			<div class="panel">
+				<div class="panel-head">
+					<span class='icon-times float-right rotate'></span>
+					<h4 class="icon-search">&nbsp;查询</h4>
+				</div>
+				<div class="panel-body padding-small form-inline">
+					<div class="form-group">
+						<div class="label">
+							<label for="name">&nbsp;&nbsp;&nbsp;&nbsp;文件名</label>&nbsp;&nbsp;&nbsp;&nbsp;
+						</div>
+						<div class="field">
+							<input type="text" class="input" id="name" name="name"
+								maxlength="50" value="" placeholder="" />
+						</div>
+					</div>
+					<button type="button" class="button button-small bg-main"
+						onclick="loadMisManagerFileList(0);">
+						<span class="icon-search text-white">&nbsp;查询</span>
+					</button>
+				</div>
+			</div>
+			<div class="panel admin-panel" id="misManagerFileList">
+			</div>
+		</form>
+	</div>
+					
+
+</div>
+</body>
+</html>

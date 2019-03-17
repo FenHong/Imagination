@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+<div class="panel-head">
+					<strong>列表</strong>
+				
+				<table class="table table-hover">
+					<tr>
+						
+						<th width="*">编号</th>
+						<th width="*">文件名</th>
+                        <th width="*">发布人</th>
+						
+					</tr>
+					<tr th:each="r : ${managerfiles.rows}">
+						
+						<td th:text="${r.managerFileNo}"></td>
+						<td th:text="${r.managerFileName}"></td>
+						<td th:text="${r.manager.managerName}"></td>
+					</tr>
+				</table>
+				<div class="panel-foot text-center">
+					<ul class="pagination">
+						<li><a th:onclick="${managerfiles.page > 1} ? 'loadMisManagerFileLastPage();':''">
+							<span th:class="${managerfiles.page == 1} ? 'text-gray':''">上一页</span>
+						</a></li>
+					</ul>
+					<div class="button-group radio">
+						<th:block th:each="i : ${#numbers.sequence(managerfiles.startPage, managerfiles.endPage)}">
+						<label th:class="${managerfiles.page == i} ? 'button bg-white':'button'">
+							<input name="page" th:value="${i}" th:checked="${i == managerfiles.page}" type="radio" onclick="loadMisManagerFileList(0);" th:text="${i}"/>
+						</label>
+						</th:block>
+					</div>
+					<ul class="pagination">
+						<li><a th:onclick="${managerfiles.page < managerfiles.pages} ? 'loadMisManagerFileNextPage();':''">
+							<span th:class="${managerfiles.page == managerfiles.pages} ? 'text-gray':''" >下一页</span>
+						</a></li>
+					</ul>
+				</div>

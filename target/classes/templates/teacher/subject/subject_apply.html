@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head th:include="teacher/subject/teachersubject">
+<script src="/js/mis/teachersubject.js"></script>
+<script>
+	var basePath = "/";
+	$(document).ready(function() {
+		pintuer();
+		// $(document).on('click', WoKit.hideDropMenu);
+	});
+</script>
+</head>
+<body>
+				<div class="admin">
+					<div class="x6">
+						<form  method="post" class="form radius-big" id="misTeacherSubjectCreateForm">
+						<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入课题编号</span> <label>课题编号</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input" name="subjectNo"
+										size="50" maxlength=12 data-validate="required:必填" placeholder="编号" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入课题名</span> <label>课题名</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input" name="subjectName"
+										size="50" maxlength=20 data-validate="required:必填" placeholder="课题名" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入课题描述</span><label>课题描述</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input"
+										name="subjectInfo" size="50" data-validate="required:必填"
+										placeholder="描述"  maxlength=1000/>
+								</div>
+							</div>
+														<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入课题类型</span><label>课题类型</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input"
+										name="subjectType" size="50" data-validate="required:必填"
+										placeholder="类型"  maxlength=10/>
+								</div>
+							</div>
+							<div class="form-button">
+								<button type="button" class="button bg-green" onclick="submitMisTeacherSubjectCreate();">提交</button>
+								
+							</div>
+						</form>
+					</div>
+				</div>
+</body>
+</html>

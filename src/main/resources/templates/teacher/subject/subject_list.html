@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+<div class="panel-head">
+					<strong>列表</strong>
+				</div>
+				
+				<table class="table table-hover">
+					<tr>
+						<th width="*">ID</th>
+						<th width="*">课题号</th>
+						<th width="*">课题名</th>
+						<th width="*">课题描述</th>
+						<th width="*">课题类型</th>
+						<th width="*">审核状态</th>
+						<th width="*">选取情况</th>
+						<th width="100">操作</th>
+					</tr>
+					<tr th:each="r : ${teachersubjects.rows}">
+						<td><input type="checkbox" name="id" th:value="${r.id}" /></td>
+						<td th:text="${r.subjectNo}"></td>
+						<td th:text="${r.subjectName}"></td>
+						<td th:text="${r.subjectInfo}"></td>
+						<td th:text="${r.subjectType}"></td>
+						<td th:text="${r.subjectAStatus}"th:class="${r.subjectAStatus=='待审核'}?'text-red':''"></td>
+						<td th:text="${r.subjectSStatus}"></td>
+						<td th:if="${r.subjectAStatus=='待审核'||r.subjectAStatus=='审核未通过'}"><a  th:onclick="${r.subjectAStatus=='待审核'} ? ${'loadMisTeacherSubjectUpdateForm(''' + r.getId() + ''');'}:''" th:class="${r.subjectAStatus== '待审核'} ? 'button border-blue button-little':'text-gray'">修改</a>/
+						<a th:class="${r.subjectAStatus== '待审核'||r.subjectAStatus=='审核未通过'} ? 'button border-blue button-little':'text-gray'" th:onclick="${r.subjectAStatus=='待审核'||r.subjectAStatus=='审核未通过'} ?'deleteMisTeacherSubject ();':''">删除</a></td>
+						<td th:if="${r.subjectAStatus=='审核通过'}"><a th:class="${r.subjectSStatus== '待选取'||r.subjectSStatus=='已选取'} ? 'text-gray':'button border-blue button-little'" th:onclick="${r.subjectSStatus=='待选取'||r.subjectSStatus=='已选取'} ?'':'releaseMisTeacherSubject ();'" >发布</a></td>
+					</tr>
+				</table>
+				<div class="panel-foot text-center">
+					<ul class="pagination">
+						<li><a th:onclick="${teachersubjects.page > 1} ? 'loadMisTeacherSubjectLastPage();':''">
+							<span th:class="${teachersubjects.page == 1} ? 'text-gray':''">上一页</span>
+						</a></li>
+					</ul>
+					<div class="button-group radio">
+						<th:block th:each="i : ${#numbers.sequence(teachersubjects.startPage, teachersubjects.endPage)}">
+						<label th:class="${teachersubjects.page == i} ? 'button bg-white':'button'">
+							<input name="page" th:value="${i}" th:checked="${i == teachersubjects.page}" type="radio" onclick="loadMisTeacherSubjectList(0);" th:text="${i}"/>
+						</label>
+						</th:block>
+					</div>
+					<ul class="pagination">
+						<li><a th:onclick="${teachersubjects.page < teachersubjects.pages} ? 'loadMisTeacherSubjectNextPage();':''">
+							<span th:class="${teachersubjects.page == teachersubjects.pages} ? 'text-gray':''" >下一页</span>
+						</a></li>
+					</ul>
+				</div>

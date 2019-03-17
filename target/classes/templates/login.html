@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit" />
+<title></title>
+<link rel="stylesheet" href="/css/pintuer.css" />
+<link rel="stylesheet" href="/css/xiamen.css">
+<link rel="stylesheet" href="/css/admin.css" />
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.form.min.js"></script>
+<script src="/js/pintuer.js"></script>
+<script src="/js/respond.js"></script>
+<script>
+	var basePath = "/";
+	$(document).ready(function() {
+		pintuer();
+		// $(document).on('click', WoKit.hideDropMenu);
+	});
+</script>
+<link type="image/x-icon" href="http://www.pintuer.com/favicon.ico"
+	rel="shortcut icon" />
+<link href="http://www.pintuer.com/favicon.ico" rel="bookmark icon" />
+</head>
+<body>
+	<!-- header -->
+	<div class="layout xiamen-top bounce">
+		<div class="container">
+			<h3 class="float-right">用户登录</h3>
+			<a href="/" class="float-left"><span style="font-size:40px">高校毕业设计选题系统</span></a>
+		</div>
+	</div>
+
+	<!-- main -->
+	
+	<div class="layout xiamen-page-main">
+		<div class="container">
+			<div class="courses">
+				<div class="line-big">
+					<div class="x6 fadein-left">
+						<form method="post" class="form radius-big" action="/login">
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入您的用户名</span> <label>用户名</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input" name="username" placeholder="登录账号"
+										data-validate="required:请填写账号,length#>=3:账号长度不符合要求" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入您的密码</span><label>密码</label>
+								</div>
+								<div class="field">
+									<input type="password" class="input" name="password"
+										placeholder="登录密码"
+										data-validate="required:请填写密码,length#>=3:密码长度不符合要求" />
+								</div>
+							</div>
+							<div class="form-button">
+								<button class="button bg-main text-big" type='submit'>立即登录</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div th:if="${msg != null}" class="alert alert-green bounce"><span class="close rotate-hover"></span><strong th:text="${msg}"></strong></div>
+	<div th:if="${error != null}" class="alert alert-red bounce"><span class="close rotate-hover"></span><strong th:text="${error}"></strong></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title>公告详情</title>
+<link rel="stylesheet" href="/css/pintuer.css">
+<link rel="stylesheet" href="/css/xiamen.css">
+<script src="/js/jquery.js"></script>
+<script src="/js/pintuer.js"></script>
+<script src="/js/respond.js"></script>
+</head>
+<body>
+	<div class="layout xiamen-top">
+		<div class="container">
+			<h1 class="float-left">公告详情</h1>
+			<h1 class="float-right">通知公告</h1>
+		</div>
+	</div>
+
+	<!-- main -->
+	<div class="">
+		<div class="container">
+	    <h1 th:text="${announcement.announcementName}" align="center" style="font-size:35px"></h1>	
+	    <hr style="height:2px"></hr>
+	    <div style="float:left;font-size:15px">
+	    <p th:text="'发布时间：'+${announcement.date}"></p>
+	    </div>
+	    <span th:text="'发布人：'+${announcement.manager.managerName}"  style="float:right;font-size:15px"></span>
+	    <div th:class="information">
+		<p th:text="${announcement.information}" style="font-size:20px;float:left;margin-left:-180px;margin-top:30px"></p>
+		</div>
+		<hr style="height:2px"></hr>
+	    </div>	
+	</div>
+</body>
+</html>

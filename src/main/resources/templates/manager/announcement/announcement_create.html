@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<meta charset="UTF-8">
+<head th:include="manager/announcement/managerannouncement">
+<script src="/js/mis/announcement.js"></script>
+<script>
+	var basePath = "/";
+	$(document).ready(function() {
+		pintuer();
+		// $(document).on('click', WoKit.hideDropMenu);
+	});
+</script>
+</head>
+<body>
+				<div class="admin">
+					<div class="x6">
+						<form  method="post" class="form radius-big" id="misAnnouncementCreateForm">
+						<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入通知编号</span> <label>通知编号</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input" name="announcementNo"
+										size="50" maxlength=12 data-validate="required:必填" placeholder="编号" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入通知名</span> <label>通知名</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input" name="announcementName"
+										size="50" maxlength=20 data-validate="required:必填" placeholder="通知名" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入内容</span><label>通知内容</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input"
+										name="information" size="50" data-validate="required:必填"
+										placeholder="内容"  maxlength=4000/>
+								</div>
+							</div>
+							<div class="form-button">
+								<button type="button" class="button bg-green" onclick="submitMisAnnouncementCreate();">提交</button>
+								
+							</div>
+						</form>
+					</div>
+				</div>
+</body>
+</html>

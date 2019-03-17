@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head th:include="student/student_index">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="admin">
+<table class="table table-hover">
+       <th>老师信息</th>
+       
+        <tr>
+       <td>姓名</td>
+       <td th:text="${student_teacher.subject.teacher.teacherName}" width="*"></td>
+       </tr>
+        <tr>
+       <td>性别</td>
+       <td th:text="${student_teacher.subject.teacher.sex}" width="*"></td>
+       </tr>
+        <tr>
+       <td>年龄</td>
+       <td th:text="${student_teacher.subject.teacher.age}" width="*"></td>
+       </tr>
+       <td>职称</td>
+       <td th:text="${student_teacher.subject.teacher.jobTitle}" width="*"></td>
+       </tr>
+       <td>电话</td>
+       <td th:text="${student_teacher.subject.teacher.tel}" width="*"></td>
+       </tr>
+        <td>邮箱</td>
+       <td th:text="${student_teacher.subject.teacher.email}" width="*"></td>
+       </tr>
+       </table>
+</div>
+</body>
+</html>

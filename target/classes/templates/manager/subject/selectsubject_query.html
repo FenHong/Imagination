@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head th:include="manager/subject/managersubject">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/mis/managerselectsubject.js"></script>
+<script>
+	var basePath = "/";
+	$(document).ready(function() {
+		pintuer();
+		// $(document).on('click', WoKit.hideDropMenu);
+	});
+</script>
+</head>
+<body>
+<div class="admin">
+
+	<div th:fragment="list()">
+		<form method="post" id="misManagerSelectSubjectListPageForm">
+			<div class="panel">
+				
+				<div class="panel-body padding-small form-inline">
+					
+					<button type="button" class="button button-small bg-main"
+						onclick="loadMisManagerSelectSubjectList(0);">
+						<span class="icon-search text-white">&nbsp;查询选取情况</span>
+					</button>
+				</div>
+			</div>
+			<div class="panel admin-panel" id="misManagerSelectSubjectList">
+			</div>
+		</form>
+	</div>
+					
+
+</div>
+
+</body>
+</html>

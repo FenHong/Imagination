@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head th:include="student/subject/studentsubject">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/mis/studentselectsubject.js"></script>
+<script>
+	var basePath = "/";
+	$(document).ready(function() {
+		pintuer();
+		// $(document).on('click', WoKit.hideDropMenu);
+	});
+</script>
+</head>
+<body>
+<div class="admin">
+
+	<div th:fragment="list()">
+		<form method="post" id="misStudentSelectSubjectListPageForm">
+			<div class="panel">
+				
+				<div class="panel-body padding-small form-inline">
+					
+					<button type="button" class="button button-small bg-main"
+						onclick="loadMisStudentSelectSubjectList(0);">
+						<span class="icon-search text-white">&nbsp;查询我的课题</span>
+					</button>
+				</div>
+			</div>
+			<div class="panel admin-panel" id="misStudentSelectSubjectList">
+			</div>
+		</form>
+	</div>
+					
+
+</div>
+
+</body>
+</html>

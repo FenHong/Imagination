@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+<div class="panel-head">
+					<strong>列表</strong>
+				
+				<table class="table table-hover">
+					<tr>
+						
+						<th width="*">编号</th>
+						<th width="*">通知名</th>
+						
+						<th width="*">通知时间</th>
+                        <th width="*">通知人</th>
+                        <th width="*">操作</th>
+						
+					</tr>
+					<tr th:each="r : ${announcements.rows}">
+						
+						<td th:text="${r.announcementNo}"></td>
+						<td th:text="${r.announcementName}"></td>
+						<td th:text="${r.date}"></td>
+						<td th:text="${r.manager.managerName}"></td>
+						<td><a class="button border-blue button-little" th:onclick="${'loadMisAnnouncementForm(''' + r.getId() + ''');'}">查看详情</a></td>
+					</tr>
+				</table>
+				<div class="panel-foot text-center">
+					<ul class="pagination">
+						<li><a th:onclick="${announcements.page > 1} ? 'loadMisAnnouncementLastPage();':''">
+							<span th:class="${announcements.page == 1} ? 'text-gray':''">上一页</span>
+						</a></li>
+					</ul>
+					<div class="button-group radio">
+						<th:block th:each="i : ${#numbers.sequence(announcements.startPage, announcements.endPage)}">
+						<label th:class="${announcements.page == i} ? 'button bg-white':'button'">
+							<input name="page" th:value="${i}" th:checked="${i == announcements.page}" type="radio" onclick="loadMisAnnouncementList(0);" th:text="${i}"/>
+						</label>
+						</th:block>
+					</div>
+					<ul class="pagination">
+						<li><a th:onclick="${announcements.page < announcements.pages} ? 'loadMisAnnouncementNextPage();':''">
+							<span th:class="${announcements.page == announcements.pages} ? 'text-gray':''" >下一页</span>
+						</a></li>
+					</ul>
+				</div>

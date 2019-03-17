@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: GraduationDesignMS
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Forever
+Implementation-Vendor-Id: com.springboot
+Build-Jdk: 1.8.0_101
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/GraduationDesignMS
+Created-By: Maven Integration for Eclipse
+

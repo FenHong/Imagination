@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title>用户修改</title>
+<link rel="stylesheet" href="/css/pintuer.css">
+<link rel="stylesheet" href="/css/xiamen.css">
+<script src="/js/jquery.js"></script>
+<script src="/js/pintuer.js"></script>
+<script src="/js/respond.js"></script>
+<script src="/js/mis/user.js"></script>
+</head>
+<body>
+	<div class="layout xiamen-top">
+		<div class="container">
+			<h1 class="float-left">信息修改</h1>
+			<h1 class="float-right">用户管理</h1>
+		</div>
+	</div>
+
+	<!-- main -->
+	<div class="layout xiamen-page-main">
+		<div class="container">
+			<div class="courses">
+				<div class="line-big">
+					<div class="x6">
+						<form action="/updateteacherinfo" method="post" class="form radius-big">
+						<div class="form-group">
+								<div class="label">
+									<span class="float-right">只读</span> <label>ID</label>
+								</div>
+								<div class="field">
+									<input type="id" class="input" name="id" readonly="readonly" th:value="${teacherinfo.id}"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">只读</span> <label>账号</label>
+								</div>
+								<div class="field">
+									<input type="teacherNo" class="input" name="teacherNo" readonly="readonly" th:value="${teacherinfo.teacherNo}"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入你的电话</span> <label>电话</label>
+								</div>
+								<div class="field">
+									<input type="tel" class="input" name="tel" th:value="${teacherinfo.tel}"/>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入您的邮箱</span><label>邮箱</label>
+								</div>
+								<div class="field">
+									<input type="email" class="input"
+										name="email" size="50" data-validate="required:必填"
+										placeholder="请输入郵箱" th:value="${teacherinfo.email}"/>
+								</div>
+							</div>
+														<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入您的年龄</span><label>年龄</label>
+								</div>
+								<div class="field">
+									<input type="sex" class="input"
+										name="age" size="50" data-validate="required:必填"
+										placeholder="请输入年齡" th:value="${teacherinfo.age}"/>
+								</div>
+							</div>
+
+							<div class="form-button">
+								<button type="submit" class="button bg-green" >提交</button>
+								<button class="button bg-yellow" onclick="window.close();">退出</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+</body>
+</html>

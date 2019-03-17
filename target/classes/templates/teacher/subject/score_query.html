@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head th:include="teacher/subject/teachersubject">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/mis/score.js"></script>
+<script>
+	var basePath = "/";
+	$(document).ready(function() {
+		pintuer();
+		// $(document).on('click', WoKit.hideDropMenu);
+	});
+</script>
+</head>
+<body>
+<div class="admin">
+
+	<div th:fragment="list()">
+		<form method="post" id="misScoreListPageForm">
+			<div class="panel">
+				
+				
+					<button type="button" class="button button-small bg-main"
+						onclick="loadMisScoreList(0);">
+						<span class="icon-search text-white">&nbsp;查询课题成绩</span>
+					</button>
+				</div>
+			</div>
+			<div class="panel admin-panel" id="misScoreList">
+			</div>
+		</form>
+	</div>
+					
+
+</div>
+
+</body>
+</html>

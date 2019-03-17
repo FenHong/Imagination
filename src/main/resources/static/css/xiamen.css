@@ -1,0 +1,235 @@
+/* CQV studio by lixinsheng */
+
+html { font-family:"Microsoft Yahei";}
+.information{position:relative;top:50px;height:500px;}
+.xiamen-top h3 { padding-top:10px;font-size:30px}
+.xiamen-main .x6 .line-big .x6 { padding-bottom:20px;}
+.xiamen-main .x6 .zhengce { height:480px;background:#B6F1F9 url("../images/zhengce.jpg") no-repeat right bottom;}
+.xiamen-main .x6 .zhengce dl { padding:50px 0 0 50px; color:#3AC7DA;text-shadow: 1px 1px 1px #fff;}
+.xiamen-main .x6 .zhengce dl dt{ font-size:23px; font-weight:normal;}
+.xiamen-main .x6 .zhengce dl dd{ font-size:16px;}
+
+.xiamen-main .x6 .peixun { height:230px;background:#DCF1E0 url("../images/peixun.jpg") no-repeat right bottom;}
+.xiamen-main .x6 .peixun dl { padding:20px 0 0 20px; color:#67C980;text-shadow: 1px 1px 1px #fff;}
+.xiamen-main .x6 .peixun dl dt{ font-size:18px; font-weight:normal;}
+.xiamen-main .x6 .peixun dl dd{ font-size:14px;}
+
+.xiamen-main .x6 .rencai { height:230px; background:#CDECEF url("../images/rencai.jpg") no-repeat right bottom;}
+.xiamen-main .x6 .rencai dl { padding:20px 0 0 20px; color:#64A1A7;text-shadow: 1px 1px 1px #fff;}
+.xiamen-main .x6 .rencai dl dt{ font-size:18px; font-weight:normal;}
+.xiamen-main .x6 .rencai dl dd{ font-size:14px;}
+
+.xiamen-main .x6 .yingjian { height:230px; background:#FAF4E6 url("../images/yingjian.jpg") no-repeat right bottom;}
+.xiamen-main .x6 .yingjian dl { padding:20px 0 0 20px; color:#B19A64;text-shadow: 1px 1px 1px #fff;}
+.xiamen-main .x6 .yingjian dl dt{ font-size:18px; font-weight:normal;}
+.xiamen-main .x6 .yingjian dl dd{ font-size:14px;}
+
+.xiamen-main .x6 .wenchuang { height:230px; background:#F6E2E3 url("../images/wenchuang.jpg") no-repeat right bottom;}
+.xiamen-main .x6 .wenchuang dl { padding:20px 0 0 20px; color:#9B7E7E;text-shadow: 1px 1px 1px #fff;}
+.xiamen-main .x6 .wenchuang dl dt{ font-size:18px; font-weight:normal;}
+.xiamen-main .x6 .wenchuang dl dd{ font-size:14px;}
+
+.xiamen-page-main { background-color:#A4D3EE}
+.xiamen-page-main .courses {background: url("../images/background.jpg") no-repeat right;min-height:480px;  }
+.xiamen-page-main .courses .x6 { padding:20px 0;}
+.xiamen-page-main .courses .x6 form { background-color:#fff; padding:20px;height:440px; border-radius: 6px;;}
+
+.xiamen-foot {background-color:#fff; color:#999;}
+.xiamen-foot dl { padding:20px;}
+.xiamen-foot dl dd { padding:0;}
+.xiamen-foot ul { padding-top:25px;padding-right:10px;}
+.xiamen-foot ul li { padding:0 5px; text-align:center;}
+.xiamen-foot ul li span { background-color:#eee; border-radius:20px; width:40px; height:40px; line-height:40px; display:block; font-size:18px;color:#999;}
+
+
+
+@keyframes ship {
+  0% {
+    transform: rotatez(5deg);
+  }
+  100% {
+    transform: rotatez(0);
+  }
+}
+
+@keyframes cloud {
+  0% {
+    left:150px;
+	opacity: 0.2;
+  }
+  100% {
+    left:200px;
+	opacity: 0.8;
+  }
+}
+@keyframes cloud02 {
+  0% {
+    left:350px;
+
+  }
+  100% {
+    left:300px;
+
+  }
+}
+@keyframes cloud03 {
+  0% {
+    right:50px;
+	opacity: 0.2;
+
+  }
+  100% {
+    left:100px;
+	opacity: 0.8;
+  }
+}
+
+@keyframes res-01 {
+  0% {
+    opacity: 0;
+    transform: translateX(160px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes res-02 {
+  0% {
+    opacity: 0;
+    transform: translate(160px,160px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+}
+@keyframes res-03 {
+  0% {
+    opacity: 0;
+    transform: translatey(160px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0) scale(1);
+  }
+}
+@keyframes res-04 {
+  0% {
+    opacity: 0;
+    transform: translate(-160px,160px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+}
+@keyframes res-05 {
+  0% {
+    opacity: 0;
+    transform: translateX(-160px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes res-06 {
+  0% {
+    opacity: 0;
+    transform: translate(-160px,-160px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+}
+@keyframes res-07 {
+  0% {
+    opacity: 0;
+    transform: translatey(-160px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0) scale(1);
+  }
+}
+@keyframes res-08 {
+  0% {
+    opacity: 0;
+    transform: translate(160px,-160px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotatez(360deg);
+  }
+  100% {
+    transform: rotatez(0);
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fade-top {
+  0% {
+    opacity: 0;
+    transform: translatey(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}
+@keyframes fade-bottom {
+  0% {
+    opacity: 0;
+    transform: translatey(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}

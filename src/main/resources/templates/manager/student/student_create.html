@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<meta charset="UTF-8">
+<head th:include="manager/student/manager_studentinfo">
+<script src="/js/mis/student.js"></script>
+<script>
+	var basePath = "/";
+	$(document).ready(function() {
+		pintuer();
+		// $(document).on('click', WoKit.hideDropMenu);
+	});
+</script>
+</head>
+<body>
+				<div class="admin">
+<div class="x6">
+						<form  method="post" class="form radius-big" id="misStudentCreateForm">
+						<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入学号</span> <label>学号</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input" name="studentNo"
+										size="50" maxlength=12 data-validate="required:必填" placeholder="学号" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入姓名</span> <label>姓名</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input" name="studentName"
+										size="50" maxlength=10 data-validate="required:必填" placeholder="姓名" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入性别</span><label>性别</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input"
+										name="sex" size="50" data-validate="required:必填"
+										placeholder="性别"  maxlength=12/>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入年龄</span><label>年龄</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input"
+										name="age" size="50" data-validate="required:必填" maxlength=11
+										placeholder="年龄" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入学院</span><label>学院</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input"
+										name="college" size="50" data-validate="required:必填" maxlength=11
+										placeholder="学院" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入专业</span><label>专业</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input"
+										name="major" size="50" data-validate="required:必填" maxlength=11
+										placeholder="专业" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="label">
+									<span class="float-right">请输入班级</span><label>班级</label>
+								</div>
+								<div class="field">
+									<input type="text" class="input"
+										name="clazz" size="50" data-validate="required:必填" maxlength=11
+										placeholder="班级" />
+								</div>
+							</div>
+							
+
+
+							<div class="form-button">
+								<button type="button" class="button bg-green" onclick="submitMisStudentCreate();">提交</button>
+								
+							</div>
+						</form>
+					</div>
+				</div>
+</body>
+</html>

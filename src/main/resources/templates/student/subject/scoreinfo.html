@@ -1,0 +1,33 @@
+<head th:include="student/subject/studentsubject">
+<meta charset="UTF-8">
+</head>
+<body>
+<div class="admin">
+<div class="x6">
+       <table class="table table-hover">
+       <th>成绩信息</th>
+       <tr>
+       <td width="45">课题名</td>
+       <td th:text="${grade.selectsubject.subject.subjectName}" width="*"></td>
+       </tr>
+       <tr>
+       <td width="45">课题类型</td>
+       <td th:text="${grade.selectsubject.subject.subjectType}" width="*"></td>
+       </tr>
+        <tr>
+       <td>分数</td>
+       <td th:text="${grade.grade}" width="*"></td>
+       </tr>
+        <tr>
+       <td>评语</td>
+       <td th:text="${grade.comment}" width="*"></td>
+       </tr>
+        <tr>
+       <td>评分人</td>
+       <td th:text="${grade.selectsubject.subject.teacher.teacherName}" width="*"></td>
+       </tr>
+       
+       </table>
+	</div>
+</div>							 
+</body>

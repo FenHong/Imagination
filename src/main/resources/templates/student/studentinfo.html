@@ -1,0 +1,41 @@
+<head th:include="student/student_index">
+<meta charset="UTF-8">
+</head>
+<body>
+<div class="admin">
+<div class="x6">
+       <table class="table table-hover">
+       <th>用户信息</th>
+       <tr>
+       <td width="45">ID</td>
+       <td th:text="${student.id}" width="*"></td>
+       </tr>
+        <tr>
+       <td>账号</td>
+       <td th:text="${student.studentNo}" width="*"></td>
+       </tr>
+        <tr>
+       <td>姓名</td>
+       <td th:text="${student.studentName}" width="*"></td>
+       </tr>
+        <tr>
+       <td>性别</td>
+       <td th:text="${student.sex}" width="*"></td>
+       </tr>
+        <tr>
+       <td>年龄</td>
+       <td th:text="${student.age}" width="*"></td>
+       </tr>
+       <td>学院</td>
+       <td th:text="${student.college}" width="*"></td>
+       </tr>
+       <td>专业</td>
+       <td th:text="${student.major}" width="*"></td>
+       </tr>
+        <td>班级</td>
+       <td th:text="${student.clazz}" width="*"></td>
+       </tr>
+       </table>
+	</div>
+</div>							 
+</body>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head th:include="teacher/teacher_index">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="admin">
+<div class="panel-head">
+					<strong>学生列表</strong>
+				</div>
+				
+				<table class="table table-hover">
+					<tr>
+						
+						<th width="200">学号</th>
+						<th width="*">姓名</th>
+						<th width="*">性别</th>
+						<th width="*">学院</th>
+						<th width="*">专业</th>
+						<th width="*">班级</th>
+						
+					</tr>
+					<tr th:each="r : ${teacher_students}">
+						
+						<td th:text="${r.student.studentNo}"></td>
+						<td th:text="${r.student.studentName}"></td>
+						<td th:text="${r.student.sex}"></td>
+						<td th:text="${r.student.college}"></td>
+						<td th:text="${r.student.major}"></td>
+						<td th:text="${r.student.clazz}"></td>
+					</tr>
+				</table>
+</div>
+</body>
+</html>

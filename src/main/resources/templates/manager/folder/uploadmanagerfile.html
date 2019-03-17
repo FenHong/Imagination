@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head th:include="manager/folder/managerfile">
+<meta  content="multipart/form-data; charset=utf-8" />
+</head>
+<body>
+<div class="admin">
+<div class="x6">
+<form method="post" class="form radius-big" action="/uploadManagerFile" enctype="multipart/form-data">	
+<div class="form-group">
+		<div class="label">
+		<span class="float-right">请选择您的文件</span> <label>文件</label>
+		</div>
+</div>
+		<div class="field">
+		<input type="file" class="input" name="managerfile"/>
+		</div>
+	
+<div class="form-button">
+<button type="submit" class="button bg-green">提交</button>
+</div>
+</form>					 
+</div>
+</div>
+</body>
+</html>

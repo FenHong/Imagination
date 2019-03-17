@@ -1,0 +1,48 @@
+<head th:include="teacher/teacher_index">
+<meta charset="UTF-8">
+</head>
+<body>
+<div class="admin">
+<div class="x6">
+<form action="/toupdateteacherinfo" method="post" class="form radius-big">
+       <table class="table table-hover">
+       <th>用户信息</th>
+       <tr>
+       <td width="45">ID</td>
+       <td th:text="${teacher.id}" width="*"></td>
+       </tr>
+        <tr>
+       <td>账号</td>
+       <td th:text="${teacher.teacherNo}" width="*"></td>
+       </tr>
+        <tr>
+       <td>姓名</td>
+       <td th:text="${teacher.teacherName}" width="*"></td>
+       </tr>
+        <tr>
+       <td>性别</td>
+       <td th:text="${teacher.sex}" width="*"></td>
+       </tr>
+        <tr>
+       <td>年龄</td>
+       <td th:text="${teacher.age}" width="*"></td>
+       </tr>
+       <td>职称</td>
+       <td th:text="${teacher.jobTitle}" width="*"></td>
+       </tr>
+       <td>电话</td>
+       <td th:text="${teacher.tel}" width="*"></td>
+       </tr>
+        <td>邮箱</td>
+       <td th:text="${teacher.email}" width="*"></td>
+       </tr>
+       </table>
+       	<div class="form-button">
+       <button type="submit" class="button bg-green" >修改用户信息</button>
+	</div>
+	</form>
+	</div>
+	</div>
+
+</div>							 
+</body>
